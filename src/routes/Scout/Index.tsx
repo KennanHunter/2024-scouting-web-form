@@ -6,7 +6,7 @@ const toTitleCase = (input: string): string =>
   input
     .split(" ")
     .map((word) => word[0].toUpperCase() + word.slice(1))
-    .join("");
+    .join(" ");
 
 export const Scout: FC = () => {
   const location = useLocation();

@@ -9,6 +9,7 @@ import {
 import { Layout } from "./routes/Layout";
 import { Scout } from "./routes/Scout/Index";
 import { AutoScout } from "./routes/Scout/Auto";
+import { Config } from "./routes/Config";
 
 export const routerConfig = [
   {
@@ -24,6 +25,10 @@ export const routerConfig = [
             element: <AutoScout />,
           },
         ],
+      },
+      {
+        path: "/config/",
+        element: <Config />,
       },
     ],
   },

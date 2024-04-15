@@ -1,8 +1,11 @@
-import { Box, Flex, Paper, Title } from "@mantine/core";
+import { Badge, Box, Flex, Paper, Title } from "@mantine/core";
 import { FC } from "react";
 import { Outlet } from "react-router-dom";
+import { usePositionStore } from "../stores/usePositionStore";
 
 export const Layout: FC = () => {
+  const { currentPosition } = usePositionStore();
+
   return (
     <>
       <Box
@@ -22,7 +25,12 @@ export const Layout: FC = () => {
           })}
         >
           <Flex align={"center"} h={"100%"} justify={"space-between"} px={"md"}>
-            <Title>Hopper Scouting</Title>
+            <Flex align={"center"} gap={"sm"}>
+              <Title>Hopper Scouting</Title>
+              <Badge color={currentPosition.includes("Red") ? "red" : "blue"}>
+                {currentPosition}
+              </Badge>
+            </Flex>
           </Flex>
           <Outlet />
         </Paper>
