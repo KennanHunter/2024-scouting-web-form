@@ -1,12 +1,16 @@
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "./theme";
-import { RouterProvider, createHashRouter } from "react-router-dom";
+import {
+  RouteObject,
+  RouterProvider,
+  createHashRouter,
+} from "react-router-dom";
 import { Layout } from "./routes/Layout";
 import { Scout } from "./routes/Scout/Index";
 import { AutoScout } from "./routes/Scout/Auto";
 
-const router = createHashRouter([
+export const routerConfig = [
   {
     path: "/",
     element: <Layout />,
@@ -23,7 +27,9 @@ const router = createHashRouter([
       },
     ],
   },
-]);
+] satisfies RouteObject[];
+
+const router = createHashRouter(routerConfig);
 
 export default function App() {
   return (
