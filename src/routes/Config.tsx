@@ -6,8 +6,8 @@ export const Config: FC = () => {
   const { currentPosition, setCurrentPosition } = usePositionStore();
 
   return (
-    <Center p={"lg"} m={"sm"}>
-      <Paper>
+    <Center>
+      <Paper p={"lg"} m={"sm"}>
         <Select
           value={currentPosition}
           data={
