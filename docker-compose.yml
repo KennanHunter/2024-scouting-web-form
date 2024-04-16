@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  gunServer:
+    image: gundb/gun
+    expose:
+      - 8765
+  frontend:
+    build: .
+    ports:
+      - 8000:80
+
+volumes:
+  db-data:
