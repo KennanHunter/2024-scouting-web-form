@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type ClientSpecificMatchData = {
-  currentMatch: number | undefined;
+  currentMatch: number;
   setCurrentMatch: (newCurrentMatch: number) => void;
   currentTargetTeam: number | undefined;
   setCurrentTargetTeam: (newCurrentTargetTeam: number | undefined) => void;
