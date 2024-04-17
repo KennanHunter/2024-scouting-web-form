@@ -7,9 +7,9 @@ import "gun/lib/rindexed";
 import "gun/lib/webrtc";
 import "gun/nts";
 
-export const gun = Gun({
+export const gunClient = Gun({
   peers: [import.meta.env.VITE_GUN_URL],
-  localStorage: true,
+  localStorage: false,
 });
 
 // Just make sure that SEA doesn't get tree shaken,

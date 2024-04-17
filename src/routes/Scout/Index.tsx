@@ -5,7 +5,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 const toTitleCase = (input: string): string =>
   input
     .split(" ")
-    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .map((word) => (word[0] ? word[0].toUpperCase() : "") + word.slice(1))
     .join(" ");
 
 export const Scout: FC = () => {

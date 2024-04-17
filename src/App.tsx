@@ -10,6 +10,8 @@ import { Layout } from "./routes/Layout";
 import { Scout } from "./routes/Scout/Index";
 import { AutoScout } from "./routes/Scout/Auto";
 import { Config } from "./routes/Config";
+import { Index } from "./routes/Index";
+import { SetupScout } from "./routes/Scout/Setup";
 
 export const routerConfig = [
   {
@@ -17,9 +19,17 @@ export const routerConfig = [
     element: <Layout />,
     children: [
       {
-        path: "/scout/",
+        path: "/",
+        element: <Index />,
+      },
+      {
+        path: "scout/",
         element: <Scout />,
         children: [
+          {
+            path: "setup/",
+            element: <SetupScout />,
+          },
           {
             path: "auto/",
             element: <AutoScout />,
@@ -27,7 +37,7 @@ export const routerConfig = [
         ],
       },
       {
-        path: "/config/",
+        path: "config/",
         element: <Config />,
       },
     ],

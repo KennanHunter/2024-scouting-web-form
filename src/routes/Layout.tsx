@@ -26,7 +26,7 @@ export const Layout: FC = () => {
         >
           <Flex align={"center"} h={"100%"} justify={"space-between"} px={"md"}>
             <Flex align={"center"} gap={"sm"}>
-              <Title>Hopper Scouting</Title>
+              <Title>Galileo Scouting</Title>
               <Badge color={currentPosition.includes("Red") ? "red" : "blue"}>
                 {currentPosition}
               </Badge>
