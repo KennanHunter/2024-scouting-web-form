@@ -32,7 +32,10 @@ export const SetupScout: FC = () => {
       .once((match) => {
         console.dir({ match });
 
-        if (!match) return;
+        if (!match) {
+          setErrorText("Current match not in database");
+          return;
+        }
 
         const entry = match as MatchGUNEntry;
 
@@ -41,7 +44,7 @@ export const SetupScout: FC = () => {
         setCurrentTargetTeam(targetTeam);
       });
   }, [currentEventKey, currentMatch, setCurrentTargetTeam]);
- 
+
   return (
     <>
       <Text c={"red"}>{errorText}</Text>

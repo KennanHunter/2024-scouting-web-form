@@ -1,17 +1,17 @@
-import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
-import { theme } from "./theme";
+import "@mantine/core/styles.css";
 import {
   RouteObject,
   RouterProvider,
   createHashRouter,
 } from "react-router-dom";
-import { Layout } from "./routes/Layout";
-import { Scout } from "./routes/Scout/Index";
-import { AutoScout } from "./routes/Scout/Auto";
 import { Config } from "./routes/Config";
 import { Index } from "./routes/Index";
+import { Layout } from "./routes/Layout";
+import { AutoScout } from "./routes/Scout/Auto";
+import { Scout } from "./routes/Scout/Index";
 import { SetupScout } from "./routes/Scout/Setup";
+import { theme } from "./theme";
 
 export const routerConfig = [
   {

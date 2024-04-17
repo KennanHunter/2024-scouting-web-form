@@ -1,10 +1,10 @@
 import { Button, Center, Paper, Select, Stack, TextInput } from "@mantine/core";
 import { FC, useState } from "react";
 import { z } from "zod";
+import { MatchGUNEntry } from "../GUNEntries";
 import { gunClient } from "../gunProvider";
 import { useEventStore } from "../stores/useEventStore";
 import { Position, usePositionStore } from "../stores/usePositionStore";
-import { MatchGUNEntry } from "../GUNEntries";
 
 const MatchesSchema = () =>
   z.object({
