@@ -12,6 +12,8 @@ import { AutoScout } from "./routes/Scout/Auto";
 import { Scout } from "./routes/Scout/Index";
 import { SetupScout } from "./routes/Scout/Setup";
 import { theme } from "./theme";
+import { TeleopScout } from "./routes/Scout/Teleop";
+import { EndgameScout } from "./routes/Scout/Endgame";
 
 export const routerConfig = [
   {
@@ -33,6 +35,14 @@ export const routerConfig = [
           {
             path: "auto/",
             element: <AutoScout />,
+          },
+          {
+            path: "teleop/",
+            element: <TeleopScout />,
+          },
+          {
+            path: "endgame/",
+            element: <EndgameScout />,
           },
         ],
       },

@@ -1,6 +1,6 @@
 import { Badge, Box, Flex, Paper, Title } from "@mantine/core";
 import { FC } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { usePositionStore } from "../stores/usePositionStore";
 
 export const Layout: FC = () => {
@@ -26,7 +26,9 @@ export const Layout: FC = () => {
         >
           <Flex align={"center"} h={"100%"} justify={"space-between"} px={"md"}>
             <Flex align={"center"} gap={"sm"}>
-              <Title>Galileo Scouting</Title>
+              <Link to={"/"} style={{ all: "unset" }}>
+                <Title>Galileo Scouting</Title>
+              </Link>
               <Badge color={currentPosition.includes("Red") ? "red" : "blue"}>
                 {currentPosition}
               </Badge>

@@ -1,6 +1,8 @@
-import { Center, Paper, Stack, Title } from "@mantine/core";
+import { Title } from "@mantine/core";
 import { FC, useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Page } from "../../elements/Page";
+import { useClientSpecificMatchData } from "../../stores/useClientSpecificMatchData";
 
 const toTitleCase = (input: string): string =>
   input
@@ -9,6 +11,7 @@ const toTitleCase = (input: string): string =>
     .join(" ");
 
 export const Scout: FC = () => {
+  const { currentTargetTeam } = useClientSpecificMatchData();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -16,18 +19,16 @@ export const Scout: FC = () => {
 
   useEffect(() => {
     if (!path.at(0) || path.at(0) === "") {
-      navigate("/scout/auto");
+      navigate("/scout/setup");
     }
   });
 
   return (
-    <Center>
-      <Paper p={"lg"} mt={"md"}>
-        <Stack>
-          <Title>{toTitleCase(path.at(0) ?? "")}</Title>
-          <Outlet />
-        </Stack>
-      </Paper>
-    </Center>
+    <Page>
+      <Title>
+        {toTitleCase(path.at(0) ?? "")} - {currentTargetTeam}
+      </Title>
+      <Outlet />
+    </Page>
   );
 };

@@ -8,6 +8,9 @@ export type Position = `${AllianceColor} ${PositionNumber}`;
 type PositionStore = {
   currentPosition: Position;
   setCurrentPosition: (newPosition: Position) => void;
+
+  currentViewingAngle: "amp" | "source";
+  setCurrentViewingAngle: (newViewingAngle: "amp" | "source") => void;
 };
 
 export const usePositionStore = create<PositionStore>()(
@@ -19,6 +22,10 @@ export const usePositionStore = create<PositionStore>()(
           currentPosition: newPosition,
         });
       },
+
+      currentViewingAngle: "amp",
+      setCurrentViewingAngle: (newViewingAngle) =>
+        set({ currentViewingAngle: newViewingAngle }),
     }),
     { name: "positionStore" }
   )
